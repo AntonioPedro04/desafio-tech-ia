@@ -26,34 +26,34 @@ def padronizaValoresNuméricos(refeicao):
 
   return refeicao
 
-## Ingredientes que foram escolhidos aleatoriamento no treinamento do modelo para que se realizem as combinações de cada refeição (Seção: Criação do Dataset do modelo no arquivo model_training.ipynb)
-ingredientesAleatóriosModelo = np.array([
-    "Mamão doce em calda drenado",
-    "Leite de vaca integral pó",
-    "Feijão tropeiro mineiro",
-    "Sarapatel",
-    "Hambúrguer bovino grelhado",
-    "Peru congelado assado",
-    "Corvina grande assada",
-    "Caju suco concentrado envasado",
-    "Pão de queijo assado",
-    "Cocada branca",
+## Ingredientes que foram escolhidos aleatoriamente no treinamento do modelo para que se realizem as combinações de cada refeição (Seção: Criação do Dataset do modelo no arquivo model_training.ipynb)
+ingredientesAleatóriosModelo = [
+    "Biscoito doce recheado com morango",
     "Brócolis cozido",
+    "Caju suco concentrado envasado",
     "Camarão Rio Grande grande cozido",
     "Carne bovina fígado grelhado",
-    "Estrogonofe de carne",
     "Cenoura cozida",
-    "Porco pernil assado",
-    "Frango filé à milanesa",
-    "Biscoito doce recheado com morango",
-    "Linhaça semente",
-    "Pé-de-moleque amendoim",
-    "Macarrão molho bolognesa",
-    "Soja queijo (tofu)",
     "Chá preto infusão 5%",
+    "Cocada branca",
+    "Corvina grande assada",
+    "Estrogonofe de carne",
+    "Feijão tropeiro mineiro",
+    "Frango filé à milanesa",
+    "Hambúrguer bovino grelhado",
+    "Leite de vaca integral pó",
+    "Linhaça semente",
+    "Macarrão molho bolognesa",
+    "Mamão doce em calda drenado",
     "Merluza filé frito",
-    "Milho verde enlatado drenado"
-])
+    "Milho verde enlatado drenado",
+    "Peru congelado assado",
+    "Porco pernil assado",
+    "Pão de queijo assado",
+    "Pé-de-moleque amendoim",
+    "Sarapatel",
+    "Soja queijo (tofu)"
+]
 
 
 ## Nesse passo, a partir dos ingredientes do objeto refeicao e de seus valores de nutrientes, montamos um df que pode ser utilizada como argumento para a previsão do modelo (de acordo com o modelo que fizemos, em que cada ingrediente tem um valor 1 ou 0 associado para sinalizar presença na refeição, além das colunas de nutrientes)
@@ -63,12 +63,12 @@ def transformaRefeicaoModeloPadronizado(refeicao, ingredientesAleatóriosModelo 
     for ingrediente in ingredientesAleatóriosModelo:
         dados[ingrediente] = 1 if ingrediente in refeicao.ingredientes else 0
 
-    dados["calorias"] = refeicao.calorias
-    dados["proteinas"] = refeicao.proteinas
-    dados["gorduras"] = refeicao.gorduras
-    dados["carboidratos"] = refeicao.carboidratos
+    dados["Calorias"] = refeicao.calorias
+    dados["Proteinas"] = refeicao.proteinas
+    dados["Gorduras"] = refeicao.gorduras
+    dados["Carboidratos"] = refeicao.carboidratos
 
-    df = pd.DataFrame([dados])
+    df = pd.DataFrame.from_dict([dados])
     return dados
 
 
