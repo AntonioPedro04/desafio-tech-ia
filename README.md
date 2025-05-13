@@ -215,11 +215,11 @@ sudo docker run -p 8000:8000 projetofeatcode
 Nessa fase, irá aparecer algo como "Uvicorn running on http://0.0.0.0:8000" no terminal. Sendo assim, acesse esse link usando CTRL+CLICK.
 Isso o vai direcionar para o browser.
 
-No browser, adicione "/docs" no link principal. Dessa forma, você conseguirá testar a API, podendo utilizar quaisquer valores no RequestBody da api.
+No browser, adicione "/docs" no link principal. Dessa forma, você conseguirá testar a API, podendo utilizar quaisquer valores no RequestBody da requisição.
 
 ## Pequenos testes
 
-Valores interessante para um teste inicial seriam:
+Valores interessantes para um teste inicial seriam:
 
 ```
 {
