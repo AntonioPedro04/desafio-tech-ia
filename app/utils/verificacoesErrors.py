@@ -1,4 +1,4 @@
-from utils.preprocessing import ingredientesAleatóriosModelo
+from app.utils.preprocessing import ingredientesAleatóriosModelo
 import numpy as np
 
 def temIngredienteLista(ingredientes):

@@ -1,10 +1,9 @@
 from fastapi import FastAPI, HTTPException
-from models.ml_model import previsao
-from utils.response import responseConstructor
-from schemas.meal import Refeicao
-from schemas.mealOutput import RefeicaoOutput
-from utils.preprocessing import padronizaRefeicao
-from utils.verificacoesErrors import temIngredienteLista, haValorNegativo
+from app.models.ml_model import previsao
+from app.utils.response import responseConstructor
+from app.schemas.meal import Refeicao
+from app.utils.preprocessing import padronizaRefeicao
+from app.utils.verificacoesErrors import temIngredienteLista, haValorNegativo
 import pandas as pd
 
 app = FastAPI()
